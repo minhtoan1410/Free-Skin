@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.input-type{
+    margin: 16px auto;
+    display: block;
+    padding: 8px;
+    width: 200px;
+}
+.password-menu button{
+    display: block;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    background-color: black;
+    width: 100px;
+    height: 50px;
+}   

